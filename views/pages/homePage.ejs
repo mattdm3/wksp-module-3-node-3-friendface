@@ -1,0 +1,78 @@
+<%- include ('../partials/header', {}) %>
+
+
+<div class="container">
+    <div class="welcome">
+        <img class="" src="<%=currentUser.avatarUrl %>" alt="">
+        <div class="text">
+            <h3 class="fade-in">Hello <span class=" heading"><%= currentUser.name %></span> </h3>
+            <h3 class="name-heading"><%=`${currentUser.name}'s Friends:`%></h3>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<div class="friends-container">
+
+
+    <div class="friend-list">
+        <% currentUser.friends.forEach(friendId => { 
+        users.forEach(user => {
+            if(friendId === user.id) { %>
+
+        <div class="friend">
+            <a href="/user/<%=user.id %>">
+                <img src=" <%=user.avatarUrl%>" alt="">
+                <h4> <%= user.name %> </h4>
+            </a>
+
+        </div>
+        <% }%>
+        <% })%>
+        <% }) %>
+    </div>
+
+</div>
+
+
+<div class="not-friend-container">
+
+    <h2 class="not-friend-heading">Make a new friend</h2>
+
+    <div class="not-friend-list">
+        <% users.forEach(user => {
+        if(user !== currentUser) { %>
+
+        <div class="not-friend">
+            <a href="/user/<%= user.id %>">
+                <img src="<%= user.avatarUrl %>" alt="">
+                <h4><%= user.name %> </h4>
+            </a>
+
+
+        </div>
+
+
+        <%  } %>
+
+        <% })%>
+
+    </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<%- include('../partials/footer', {}) %>

@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab:300&display=swap');
 @import 'reset';
 @import 'typography';
+@import 'signin';
+@import 'homepage';
 
 body {
-    background: #fafafa;
+    background: #f4f4f4;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -57,3 +59,4 @@ body {
         min-height: 500px;
     }
 }
+

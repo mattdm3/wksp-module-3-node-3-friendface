@@ -1,0 +1,51 @@
+<%- include ('../partials/header', {title: title}) %>
+
+
+<div class="container">
+    <div class="welcome">
+        <img src="<%=profile.avatarUrl %>" alt="">
+        <div class="text">
+            <h3 class="fade-in">Meet <span class=" heading"><%= profile.name %></span> </h3>
+            <h3 class="name-heading"><%=`${profile.name}'s Friends:`%></h3>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<div class="friends-container">
+
+
+    <div class="friend-list">
+        <% profile.friends.forEach(friendId => { 
+        users.forEach(user => {
+            if(friendId === user.id) { %>
+
+        <div class="friend">
+            <a href="/user/<%=user.id %>">
+                <img src=" <%=user.avatarUrl%>" alt="">
+                <h4> <%= user.name %> </h4>
+            </a>
+
+        </div>
+        <% }%>
+        <% })%>
+        <% }) %>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<%- include('../partials/footer', {}) %>
