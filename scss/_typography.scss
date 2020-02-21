@@ -1,5 +1,5 @@
 h1, h2, h3, h4 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Helvetica', sans-serif;
 }
 
 h1 {
@@ -13,6 +13,13 @@ h2 {
 h3 {
     font-size: 24px;
     margin-bottom: 1em;
+}
+
+.heading {
+    color: #00131F;
+    font-size: 18px;
+    font-family: "Helvetica";
+    font-weight: 600;
 }
 
 h4 {
